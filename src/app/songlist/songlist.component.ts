@@ -11,9 +11,15 @@ export class SonglistComponent {
 
   constructor(private apiService: ApiService) {}
 
-  getArtist(query: string) {
-    this.apiService.getArtist(query).subscribe((item: any) => {
-      console.log(item);
-    });
+  getDetails(artist: string, song: string){
+    if (song != "undefined" && song)
+      this.apiService.getSongDetails(artist, song).subscribe((songDetails: any) => {
+        console.log(songDetails);
+      })
+      else {
+        this.apiService.getArtist(artist).subscribe((top50songs: any)=>{
+          console.log(top50songs)
+        })
+      };
+    }
   }
-}

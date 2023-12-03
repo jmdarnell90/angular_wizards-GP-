@@ -1,4 +1,4 @@
-<p>songlist works!</p>
+<input type="text" placeholder="Artist or Band" #searchArtist>
+<input type="text" placeholder="Song" #searchSong>
 
-<input type="text" #search>
-<button (click)="getArtist(search.value)"></button>
+<button type="submit" class="btn, btn-primary" (click)="getDetails(searchArtist.value, searchSong.value)">Search</button>
