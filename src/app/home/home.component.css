@@ -1,0 +1,47 @@
+div {
+  width: 100%;
+  height: 100%;
+  background-color: #0f721c;
+}
+
+p {
+  color: #a4a4a4;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: x-large;
+  font-weight: 300;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  text-shadow: #fff;
+  align-items: center;
+}
+.large-button{
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: xx-large;
+  border-radius: 1rem;
+
+
+}
+
+.btn-purple {
+  color: black;
+  border-color: #a4a4a4;
+  background-color: #a4a4a4;
+  margin-left:400px;
+}
+
+.btn-purple:hover {
+  color: #fff;
+  background-color: #575353;
+  border-color: #575353;
+}
+
+.btn-purple:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem#A4A4A4;
+}
+
+.btn-purple:active {
+  color: #fff;
+  background-color: #a4a4a4;
+  border-color: #a4a4a4;
+}

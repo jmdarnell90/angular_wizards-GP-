@@ -25,7 +25,7 @@ const routes: Route[] = [
         path: '',
         component: SonglistComponent
       }
-    ]    
+    ]
   },
 ];
 
