@@ -1,33 +1,38 @@
-div{
+div {
   width: 100%;
   height: 100%;
   background-color: #0f721c;
 }
 
-
-
-
-p{
-  color:#A4A4A4;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+p {
+  color: #a4a4a4;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: x-large;
   font-weight: 300;
-margin-bottom: 100px;
-margin-top: 100px;
-text-shadow: #fff;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  text-shadow: #fff;
+  align-items: center;
+}
+.large-button{
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: xx-large;
+  border-radius: 1rem;
+
+
 }
 
 .btn-purple {
-  color:black;
-  border-color:#A4A4A4;
-  background-color:#A4A4A4;
- margin-left: 625px;
+  color: black;
+  border-color: #a4a4a4;
+  background-color: #a4a4a4;
+  margin-left:400px;
 }
 
 .btn-purple:hover {
   color: #fff;
-  background-color:#575353;
-  border-color:#575353;
+  background-color: #575353;
+  border-color: #575353;
 }
 
 .btn-purple:focus {
@@ -37,7 +42,6 @@ text-shadow: #fff;
 
 .btn-purple:active {
   color: #fff;
-  background-color:#A4A4A4;
-  border-color: #A4A4A4;
+  background-color: #a4a4a4;
+  border-color: #a4a4a4;
 }
-
