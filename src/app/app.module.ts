@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { SonglistComponent } from './songlist/songlist.component';
-import { SongdetailsComponent } from './songdetails/songdetails.component';
+import { SongDetailsComponent } from './songdetails/songdetails.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +15,10 @@ import { SongdetailsComponent } from './songdetails/songdetails.component';
     HomeComponent,
     PlaylistsComponent,
     SonglistComponent,
-    SongdetailsComponent
+    SongDetailsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
