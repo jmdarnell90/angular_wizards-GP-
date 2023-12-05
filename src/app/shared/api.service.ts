@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ApiService {
-  // API_KEY = ''
+  // API_KEY = 'API_KEY = '00e8b5ac96892ec9c27ac8f763125b4e';'
 
   constructor(private httpClient: HttpClient) {}
 
@@ -23,7 +23,4 @@ export class ApiService {
 
     return this.httpClient.get(url);
   }
-
 }
-
-// http GET 'https://api.spotify.com/v1/search?q=kiss&type=artist&market=US&limit=1&offset=0' \

@@ -16,12 +16,17 @@ const routes: Route[] = [
   },
   {
     path: 'songlist',
-    component: SonglistComponent,
+    children: [
+      {
+      path: ':id/details',
+      component: SongdetailsComponent,
+      },
+      {
+        path: '',
+        component: SonglistComponent
+      }
+    ]    
   },
-  {
-    path: 'songlistDetails',
-    component: SongdetailsComponent
-  }
 ];
 
 @NgModule({
