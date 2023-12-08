@@ -13,6 +13,7 @@ p {
   padding-top: 100px;
   text-shadow: #fff;
   align-items: center;
+  display: flex;
 }
 .large-button{
   padding: 1rem 2rem 1rem 2rem;
@@ -22,11 +23,21 @@ p {
 
 }
 
+.home-container {
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
 .btn-purple {
   color: black;
   border-color: #a4a4a4;
   background-color: #a4a4a4;
-  margin-left:400px;
+  display: flex;
 }
 
 .btn-purple:hover {

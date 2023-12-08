@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { SonglistComponent } from './songlist/songlist.component';
 import { SongDetailsComponent } from './songdetails/songdetails.component';
+import { TreeNestedOverview } from './tree/tree.component';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { SongDetailsComponent } from './songdetails/songdetails.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    TreeNestedOverview
   ],
   providers: [],
   bootstrap: [AppComponent],
