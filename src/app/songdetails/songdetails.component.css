@@ -1,1 +1,27 @@
+.detail-title {
+  font-size: xx-large;
+}
 
+.detail-artist,
+.detail-album {
+  font-size: x-large;
+}
+
+.detail-duration,
+.detail-release,
+.detail-id {
+  font-size: large;
+}
+
+.detail-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+}
+
+.detail-cover {
+  min-height: 250px;
+  height: 250px;
+}
