@@ -7,9 +7,10 @@ import { SongDetailsComponent } from './songdetails/songdetails.component';
 
 const routes: Route[] = [
   {
-    path:'',
+    path: '',
     pathMatch: 'full',
-    redirectTo: 'home'
+    redirectTo: 'home',
+
   },
   {
     path: 'home',
