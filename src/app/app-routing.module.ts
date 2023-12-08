@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Route, RouterModule } from '@angular/router';
+import { Route, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { SonglistComponent } from './songlist/songlist.component';
 import { SongDetailsComponent } from './songdetails/songdetails.component';
 
-const routes: Route[] = [
+const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
     redirectTo: 'home',
-
   },
   {
     path: 'home',
@@ -24,19 +23,19 @@ const routes: Route[] = [
     path: 'songlist',
     children: [
       {
-      path: ':id/details',
-      component: SongDetailsComponent,
+        path: ':id/details',
+        component: SongDetailsComponent,
       },
       {
         path: '',
-        component: SonglistComponent
-      }
-    ]
+        component: SonglistComponent,
+      },
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
