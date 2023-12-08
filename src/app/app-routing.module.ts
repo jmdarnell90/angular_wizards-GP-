@@ -8,7 +8,8 @@ import { SongDetailsComponent } from './songdetails/songdetails.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    pathMatch: 'full',
+    redirectTo: 'home',
   },
   {
     path: 'home',
