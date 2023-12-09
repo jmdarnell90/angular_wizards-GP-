@@ -1,0 +1,19 @@
+<input type="text" placeholder="Artist or Band" #searchArtist value="rush">
+<input type="text" placeholder="Song" #searchSong value="2112">
+
+<button type="submit" class="btn, btn-primary" (click)="getDetails(searchArtist.value, searchSong.value)">Search</button>
+
+<br><br><br>
+
+<div class="row">
+      <div class="col-2">
+        <h1 style="margin-bottom: 0%;">{{ _artist.name }} - {{ _track.name }}</h1>
+        <h3 style="margin-top: 0%;">{{ _wiki.published }}</h3>
+        <hr>
+        <h4>{{ _wiki.summary }}</h4>
+        <h3><a href={{_url}} target="_blank"> {{ _track.url  }} </a></h3>
+      </div>
+      <div class="col-1">
+        <img src= {{_image}} alt="">
+      </div>
+</div>
