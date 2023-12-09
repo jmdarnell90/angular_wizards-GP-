@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Route, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
 import { HomeComponent } from './home/home.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { SonglistComponent } from './songlist/songlist.component';
 import { SongDetailsComponent } from './songdetails/songdetails.component';
+import { SongAddComponent } from './song-add/song-add.component';
 
 const routes: Routes = [
   {
@@ -13,22 +15,26 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
+    component: HomeComponent
   },
   {
     path: 'playlists',
-    component: PlaylistsComponent,
+    component: PlaylistsComponent
+  },
+  {
+    path: 'song-add',
+    component: SongAddComponent
   },
   {
     path: 'songlist',
     children: [
       {
         path: ':id/details',
-        component: SongDetailsComponent,
+        component: SongDetailsComponent
       },
       {
         path: '',
-        component: SonglistComponent,
+        component: SonglistComponent
       },
     ],
   },

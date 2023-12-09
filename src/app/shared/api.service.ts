@@ -6,21 +6,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
   // API_KEY = 'API_KEY = '00e8b5ac96892ec9c27ac8f763125b4e';'
+  private data:any = []
 
   constructor(private httpClient: HttpClient) {}
-
-  getArtist(query: string) {
-    let searchTerm = query.replace(' ', '%20');
-    let url = 'https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=' + searchTerm + '&api_key=00e8b5ac96892ec9c27ac8f763125b4e&format=json';
-
-    return this.httpClient.get(url);
-  }
 
   getSongDetails(artist: string, song: string) {
     let artistSearch = artist.replace(' ', '%20');
     let songSearch = song.replace(' ', '%20');
-    let url = 'https://ws.audioscrobbler.com/2.0/?method=track.getInfo&artist=' + artistSearch + '&track=' + songSearch + '&api_key=00e8b5ac96892ec9c27ac8f763125b4e&format=json';
+    const url = 'https://ws.audioscrobbler.com/2.0/?method=track.getInfo&artist=' + artistSearch + '&track=' + songSearch + '&api_key=00e8b5ac96892ec9c27ac8f763125b4e&format=json';
 
-    return this.httpClient.get(url);
+    return this.httpClient.get(url)
+    };
+
+      // getArtist(query: string) {
+  //   let searchTerm = query.replace(' ', '%20');
+  //   let url = 'https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=' + searchTerm + '&api_key=00e8b5ac96892ec9c27ac8f763125b4e&format=json';
+
+  //   return this.httpClient.get(url);
+  // }
   }
-}
+
