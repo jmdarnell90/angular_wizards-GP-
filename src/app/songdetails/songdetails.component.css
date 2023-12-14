@@ -1,30 +1,36 @@
+
 .detail-title {
   font-size: xx-large;
+  padding: 2rem;
+
 }
 
 .detail-artist,
 .detail-album {
   font-size: x-large;
+  padding: 1rem;
 }
 
 .detail-duration,
 .detail-release,
 .detail-id {
-  font-size: large;
+  font-size: x-large;
+  padding: 1rem;
 }
 
 .detail-container {
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
   background-image: url(https://plus.unsplash.com/premium_photo-1677583195358-291a95de4ca5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fG11c2ljJTIwYmFja2dyb3VuZHN8ZW58MHx8MHx8fDA%3D);
   background-size:cover;
+  height: 100vh;
 }
 
 .detail-cover {
-  min-width: 250px;
-  width: 250px;
-  min-height: 250px;
-  height: 250px;
+  padding: 1rem;
+  width: 400px;
+  height: 400px;
 }
