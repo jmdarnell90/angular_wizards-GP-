@@ -1,10 +1,41 @@
-<div class="row">
-  <div class="col-md-6">
-
-  </div>
-  <div class="col-md-6">
-
-  </div>
+<div *ngFor="let playlist of playlists$ | async; let i = index">
+  <p (click)="selectPlaylist(playlist, i)" style="cursor: pointer">
+    {{ playlist.name }}
+  </p>
 </div>
+
+<div *ngIf="selectedPlaylist" style="border: solid 1px red; padding: 5px">
+  <h2>{{ selectedPlaylist.name }}</h2>
+  <div *ngFor="let track of selectedPlaylist.songs">
+    {{ track }}
+    <button (click)="deleteSong(selectedPlaylistIndex!, track)">X</button>
+  </div>
+
+  <form style="margin: 5px" [formGroup]="songForm" (ngSubmit)="submit()">
+    <label for="song">Song</label>
+    <input
+      type="text"
+      name="song"
+      id="song"
+      [formControl]="songForm.controls.song"
+    />
+    <button>Submit</button>
+  </form>
+</div>
+
+<form
+  style="margin: 5px"
+  [formGroup]="playlistForm"
+  (ngSubmit)="playlistSubmit()"
+>
+  <label for="song">Playlist</label>
+  <input
+    type="text"
+    name="song"
+    id="song"
+    [formControl]="playlistForm.controls.name"
+  />
+  <button>Submit</button>
+</form>
 
 
