@@ -6,17 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import { PlaylistsComponent } from './playlists/playlists.component';
+import { PlaylistComponent } from './playlists/playlists.component';
 import { SonglistComponent } from './songlist/songlist.component';
 import { SongDetailsComponent } from './songdetails/songdetails.component';
-import { TreeNestedOverview } from './tree/tree.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PlaylistsComponent,
+
     SonglistComponent,
     SongDetailsComponent,
   ],
@@ -25,7 +25,8 @@ import { TreeNestedOverview } from './tree/tree.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    TreeNestedOverview
+    PlaylistComponent,
+
   ],
   providers: [],
   bootstrap: [AppComponent],
