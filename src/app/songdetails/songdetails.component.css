@@ -2,13 +2,20 @@
 .detail-title {
   font-size: xx-large;
   padding: 2rem;
-  
+  border-color: black;
+  border: 5px;
+  border-style: solid;
+  border: flex;
 }
 
 .detail-artist,
 .detail-album {
   font-size: x-large;
   padding: 1rem;
+  border-color: black;
+  border: 5px;
+  border-style: solid;
+  border: flex;
 }
 
 .detail-duration,
@@ -16,6 +23,10 @@
 .detail-id {
   font-size: x-large;
   padding: 1rem;
+  border-color: black;
+  border: 5px;
+  border-style: solid;
+  border: flex;
 }
 
 .detail-container {
@@ -31,6 +42,6 @@
 
 .detail-cover {
   padding: 1rem;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
 }
