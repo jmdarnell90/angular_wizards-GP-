@@ -8,15 +8,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SongAddComponent } from './song-add/song-add.component';
 import { SonglistComponent } from './songlist/songlist.component';
-import { PlaylistsComponent } from './playlists/playlists.component';
 import { SongDetailsComponent } from './songdetails/songdetails.component';
-import { TreeNestedOverview } from './tree/tree.component';
+import { PlaylistComponent } from './playlists/playlists.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PlaylistsComponent,
     SongAddComponent,
     SonglistComponent,
     SongDetailsComponent,
@@ -26,7 +25,7 @@ import { TreeNestedOverview } from './tree/tree.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    TreeNestedOverview,
+   PlaylistComponent,
     BrowserAnimationsModule,
   ],
   providers: [],

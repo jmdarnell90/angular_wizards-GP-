@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { PlaylistsComponent } from './playlists/playlists.component';
+import { PlaylistComponent } from './playlists/playlists.component';
 import { SonglistComponent } from './songlist/songlist.component';
 import { SongDetailsComponent } from './songdetails/songdetails.component';
 import { SongAddComponent } from './song-add/song-add.component';
@@ -14,16 +14,17 @@ const routes: Routes = [
     redirectTo: 'home',
   },
   {
+    path:'',
+    pathMatch: 'full',
+    redirectTo: 'home'
+  },
+  {
     path: 'home',
     component: HomeComponent
   },
   {
-    path: 'playlists',
-    component: PlaylistsComponent
-  },
-  {
-    path: 'song-add',
-    component: SongAddComponent
+    path: 'playlist',
+    component: PlaylistComponent,
   },
   {
     path: 'songlist',
