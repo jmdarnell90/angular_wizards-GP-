@@ -40,14 +40,14 @@ export class SongAddComponent {
       this._album = this.data.track.album;
       this._artist = this.data.track.artist;
       this._wiki = this.data.track.wiki;
-      this._image = this.data.track.album.image[3]['#text'];
+      this._image = this.data.track.album.image[2]['#text'];
       this._url = this.data.track.url;
-      // console.log(this.data);
+      console.log(this.data);
     });
   }
 
   submit() {
-    // if (this.songAddForm.invalid) return;
+     if (this.songAddForm.invalid) return;
 
     const playlist = this.songAddForm.value.song;
     this.playlistService.addSongToPlaylist(+playlist!, {
@@ -59,7 +59,7 @@ export class SongAddComponent {
   //   const song = this._track.name;
   //   this.playlistService.addSongToPlaylist(this.selectedPlaylistIndex!, song!);
 
-  //   this.songForm.reset();
+     this.songAddForm.reset();
    }
 
 }

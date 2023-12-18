@@ -18,17 +18,12 @@ const routes: Routes = [
   {
     path: 'playlist',
     component: PlaylistComponent,
-    children: [
-      {
-        path: ':id/details',
-        component: SongDetailsComponent,
-      },
-      {
-        path: '',
-        component: PlaylistComponent,
-      },
-    ],
   },
+      {
+        path: 'details',
+        component: SongDetailsComponent,
+      }
+  ,
   {
     path: 'songadd',
     component: SongAddComponent
