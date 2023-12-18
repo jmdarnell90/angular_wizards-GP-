@@ -8,7 +8,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Playlist, PlaylistService } from '../shared/playlist-service.service';
+import { PlaylistService, Playlist, Song } from '../shared/playlist-service.service';
 
 @Component({
   selector: 'playlists',
@@ -43,18 +43,18 @@ export class PlaylistComponent {
     this.selectedPlaylistIndex = index;
   }
 
-  deleteSong(idx: number, song: string) {
+  deleteSong(idx: number, song: Song) {
     this.playlistService.deleteSongFromPlaylist(idx, song);
   }
 
-  submit() {
-    if (this.songForm.invalid) return;
+  // submit() {
+  //   if (this.songForm.invalid) return;
 
-    const song = this.songForm.value.song;
-    this.playlistService.addSongToPlaylist(this.selectedPlaylistIndex!, song!);
+  //   const song = this.songForm.value.song;
+  //   this.playlistService.addSongToPlaylist(this.selectedPlaylistIndex!, song!);
 
-    this.songForm.reset();
-  }
+  //   this.songForm.reset();
+  // }
 
   playlistSubmit() {
     if (this.playlistForm.invalid) return;
