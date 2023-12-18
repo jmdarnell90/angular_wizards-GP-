@@ -71,15 +71,15 @@ export interface Playlist {
 export class PlaylistService {
   private _playlists = new BehaviorSubject<Playlist[]>([
     {
-      name: 'Coding',
+      name: "Justin's Jams",
       songs: ['song1', 'song2', 'song3'],
     },
     {
-      name: 'Gym',
+      name: "Tom's Top Hits",
       songs: ['song4', 'song5', 'song6'],
     },
     {
-      name: 'Sleep',
+      name:"Chassidy's Chart Toppers",
       songs: ['song7', 'song8', 'song9'],
     },
   ]);
