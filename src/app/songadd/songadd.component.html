@@ -1,0 +1,48 @@
+<input type="text" placeholder="Artist or Band" #searchArtist value="rush" />
+<!--  -->
+<input type="text" placeholder="Song" #searchSong value="2112" />
+<!--  -->
+
+<button
+  type="submit"
+  class="btn, btn-primary"
+  (click)="getDetails(searchArtist.value, searchSong.value)"
+>
+  Search
+</button>
+
+<br /><br /><br />
+
+<div class="row">
+  <div class="col-5">
+    <h1 style="margin-bottom: 0%">{{ _artist.name }} - {{ _track.name }}</h1>
+    <h3 style="margin-top: 0%">{{ _wiki.published }}</h3>
+    <hr />
+    <h4>{{ _wiki.summary }}</h4>
+    <h3>
+      <a href="{{ _url }}" target="_blank"> {{ _track.url }} </a>
+    </h3>
+  </div>
+  <div class="col-1">
+    <br /><br /><br /><br />
+    <img src="{{ _image }}" alt="" />
+  </div>
+</div>
+<br />
+
+<h2>Add to Playlist</h2>
+<form
+  class="col-sm-2"
+  style="border: 1px solid black; padding: 1em"
+  [formGroup]="songAddForm"
+  (ngSubmit)="submit()"
+>
+  <select formControlName="song" id="dropDownId" name="playlist" style="display: block; font-size: large">
+    <option value="" hidden selected>Select a playlist</option>
+    <option *ngFor="let playlist of playlists$ | async; let i = index" [value]="i" id="playlist" >
+      {{ playlist.name }}
+    </option>
+  </select>
+  <br />
+  <button>Add {{ _track.name }} by {{ _artist.name }}</button>
+</form>
