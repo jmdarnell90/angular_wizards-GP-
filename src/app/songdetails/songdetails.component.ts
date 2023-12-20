@@ -38,3 +38,4 @@ interface SongDetail {
   releaseDate: string;
   albumCoverUrl: string;
 }
+
