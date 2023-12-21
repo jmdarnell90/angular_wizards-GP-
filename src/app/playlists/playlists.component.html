@@ -1,7 +1,7 @@
 <div class="row">
   <span><h1>Playlists</h1></span>
   <div class="col-md-8">
-    <div *ngFor="let playlist of playlists$ | async; let i = index" style="border: solid 1px black; padding: 0px; background-color: aliceblue;">
+    <div *ngFor="let playlist of playlists$ | async; let i = index" style="border: solid 1px black; padding: 0px; background-color: #189629;">
       <p (click)="selectPlaylist(playlist, i)" style="cursor: pointer; text-align: center; font-size: large; padding: 1em;">
         {{ playlist.name }}
       </p>
@@ -19,12 +19,12 @@
         placeholder="Name"
         [formControl]="playlistForm.controls.name"
       />
-      <button>Submit</button>
+      <button class="btn btn-purple">Submit</button>
     </form>
   </div>
   <!-- Song list -->
   <div class="col-md-4">
-    <div *ngIf="selectedPlaylist" style="border: solid 1px black; padding: 5px; background-color: aliceblue;">
+    <div *ngIf="selectedPlaylist" style="border: solid 1px black; padding: 5px; background-color: #189629;">
       <h2>{{ selectedPlaylist.name }}</h2>
       <div style="font-size: large; padding: 2px; border-bottom: 1px black dashed;" *ngFor="let track of selectedPlaylist.songs">
         <a (click)="routeToDetails(track.id)">{{track.name}} : {{ track.artist }}</a>
