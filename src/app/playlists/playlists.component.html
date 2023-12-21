@@ -27,8 +27,8 @@
     <div *ngIf="selectedPlaylist" style="border: solid 1px black; padding: 5px; background-color: #189629;">
       <h2>{{ selectedPlaylist.name }}</h2>
       <div style="font-size: large; padding: 2px; border-bottom: 1px black dashed;" *ngFor="let track of selectedPlaylist.songs">
-         {{track.name}} : {{ track.artist }}
-        <button class="btn btn-danger" style=" float: right; width: 20px;height: 24px;padding: 2px;" (click)="deleteSong(selectedPlaylistIndex!, track)">X</button>
+        <a (click)="routeToDetails(track.id)">{{track.name}} : {{ track.artist }}</a>
+        <button style="float: right; width: 20px;height: 24px;padding: 2px;" (click)="deleteSong(selectedPlaylistIndex!, track)">X</button>
       </div>
     </div>
   </div>

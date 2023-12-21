@@ -19,15 +19,14 @@ const routes: Routes = [
     path: 'playlist',
     component: PlaylistComponent,
   },
-      {
-        path: 'details',
-        component: SongDetailsComponent,
-      }
-  ,
+  {
+    path: 'details/:id',
+    component: SongDetailsComponent,
+  },
   {
     path: 'songadd',
-    component: SongAddComponent
-  }
+    component: SongAddComponent,
+  },
 ];
 
 @NgModule({

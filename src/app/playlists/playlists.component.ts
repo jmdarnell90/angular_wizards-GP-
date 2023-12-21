@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import {
   FormBuilder,
   FormControl,
@@ -8,7 +8,11 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { PlaylistService, Playlist, Song } from '../shared/playlist-service.service';
+import {
+  PlaylistService,
+  Playlist,
+  Song,
+} from '../shared/playlist-service.service';
 
 @Component({
   selector: 'playlists',
@@ -35,18 +39,22 @@ export class PlaylistComponent {
 
   constructor(
     private playlistService: PlaylistService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {}
 
-  public selectPlaylist(playlist: Playlist, index: number) {
+  public selectPlaylist(playlist: Playlist, index: number): void {
     this.selectedPlaylist = playlist;
     this.selectedPlaylistIndex = index;
   }
 
-  deleteSong(idx: number, song: Song) {
+  deleteSong(idx: number, song: Song): void {
     this.playlistService.deleteSongFromPlaylist(idx, song);
   }
 
+  routeToDetails(id:string): void {
+    this.router.navigateByUrl(`details/${id}`);
+  }
   // submit() {
   //   if (this.songForm.invalid) return;
 
