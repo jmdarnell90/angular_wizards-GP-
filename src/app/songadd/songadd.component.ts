@@ -10,7 +10,7 @@ import { PlaylistService } from '../shared/playlist-service.service';
   selector: 'app-songadd',
   standalone: true,
   templateUrl: './songadd.component.html',
-  imports: [CommonModule, FormsModule, ReactiveFormsModule]
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
 })
 export class SongAddComponent {
   private data: any = [];
@@ -20,6 +20,7 @@ export class SongAddComponent {
   _wiki: any = [];
   _image: string = '';
   _url: string = '';
+  _id: string = '';
 
   public playlists$ = this.playlistService.playlists$;
 
@@ -31,7 +32,7 @@ export class SongAddComponent {
 
   public songAddForm = this.formBuilder.group({
     song: new FormControl('', Validators.required),
-  })
+  });
 
   getDetails(artist: string, song: string) {
     this.apiService.getSongDetails(artist, song).subscribe((res) => {
@@ -42,24 +43,25 @@ export class SongAddComponent {
       this._wiki = this.data.track.wiki;
       this._image = this.data.track.album.image[2]['#text'];
       this._url = this.data.track.url;
+      this._id = this.data.track.mbid;
       console.log(this.data);
     });
   }
 
   submit() {
-     if (this.songAddForm.invalid) return;
+    if (this.songAddForm.invalid) return;
 
     const playlist = this.songAddForm.value.song;
     this.playlistService.addSongToPlaylist(+playlist!, {
       artist: this._artist.name,
-      name: this._track.name
-    })
-  //   if (this._track.invalid) return;
+      name: this._track.name,
+      id: this._id,
+    });
+    //   if (this._track.invalid) return;
 
-  //   const song = this._track.name;
-  //   this.playlistService.addSongToPlaylist(this.selectedPlaylistIndex!, song!);
+    //   const song = this._track.name;
+    //   this.playlistService.addSongToPlaylist(this.selectedPlaylistIndex!, song!);
 
-     this.songAddForm.reset();
-   }
-
+    this.songAddForm.reset();
+  }
 }

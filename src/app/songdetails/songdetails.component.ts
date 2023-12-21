@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../shared/api.service';
 
 @Component({
   selector: 'app-songdetails',
@@ -7,25 +8,51 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./songdetails.component.css'],
 })
 export class SongDetailsComponent {
-  songDetail: SongDetail;
+  songDetail: SongDetail = {
+    id: '',
+    title: '',
+    album: '',
+    artist: '',
+    duration: '',
+    link: '',
+    albumCoverUrl: '',
+  };
 
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    private apiService: ApiService,
+    private router: Router
+  ) {
     const routeParams = this.route.snapshot.paramMap;
     const id = routeParams.get('id')!;
 
-    // grab song from service by id
+    this.apiService.getSongDetailsById(id).subscribe((response) => {
+      const song: any = response;
+      console.log(song);
+      const image = song.track.album.image[3];
+      console.log(image, image['#text']);
 
-    // not keeping this
-    this.songDetail = {
-      id: id,
-      title: 'Title',
-      album: 'Album',
-      artist: 'Artist',
-      duration: 'Time',
-      releaseDate: 'Release Date',
-      albumCoverUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_BlSkuEGt8snTBf84fX4WaH8x_0rY9L0qjw&usqp=CAU',
-    };
+      this.songDetail = {
+        id: song.track.mbid,
+        title: song.track.name,
+        album: song.track.album.title,
+        artist: song.track.artist.name,
+        duration: this.millisToMinutesAndSeconds(song.track.duration),
+        link: song.track.url,
+        albumCoverUrl: image['#text'],
+      };
+    });
+  }
+
+  routeToUrl(): void {
+    // google how to route to new url
+    this.router.navigate([this.songDetail.link]);
+  }
+
+  millisToMinutesAndSeconds(millis: any) {
+    var minutes = Math.floor(millis / 60000);
+    var seconds = +((millis % 60000) / 1000).toFixed(0);
+    return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
   }
 }
 
@@ -35,7 +62,6 @@ interface SongDetail {
   album: string;
   artist: string;
   duration: string;
-  releaseDate: string;
+  link: string;
   albumCoverUrl: string;
 }
-
