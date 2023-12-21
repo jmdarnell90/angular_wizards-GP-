@@ -28,9 +28,7 @@ export class SongDetailsComponent {
 
     this.apiService.getSongDetailsById(id).subscribe((response) => {
       const song: any = response;
-      console.log(song);
       const image = song.track.album.image[3];
-      console.log(image, image['#text']);
 
       this.songDetail = {
         id: song.track.mbid,
@@ -45,8 +43,7 @@ export class SongDetailsComponent {
   }
 
   routeToUrl(): void {
-    // google how to route to new url
-    this.router.navigate([this.songDetail.link]);
+    window.location.href = this.songDetail.link;
   }
 
   millisToMinutesAndSeconds(millis: any) {
