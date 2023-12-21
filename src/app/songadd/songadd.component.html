@@ -4,8 +4,8 @@
 <!--  -->
 
 <button
-  type="submit"
-  class="btn, btn-primary"
+type="submit"
+  class="btn btn-purple"
   (click)="getDetails(searchArtist.value, searchSong.value)"
 >
   Search
@@ -44,5 +44,5 @@
     </option>
   </select>
   <br />
-  <button>Add {{ _track.name }} by {{ _artist.name }}</button>
+  <button class="btn btn-purple">Add {{ _track.name }} by {{ _artist.name }}</button>
 </form>

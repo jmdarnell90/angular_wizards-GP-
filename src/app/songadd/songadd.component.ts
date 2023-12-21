@@ -10,6 +10,7 @@ import { PlaylistService } from '../shared/playlist-service.service';
   selector: 'app-songadd',
   standalone: true,
   templateUrl: './songadd.component.html',
+  styleUrls: ['./songadd.component.css'],
   imports: [CommonModule, FormsModule, ReactiveFormsModule]
 })
 export class SongAddComponent {
