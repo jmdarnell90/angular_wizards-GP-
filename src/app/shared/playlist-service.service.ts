@@ -9,6 +9,7 @@ export interface Playlist {
 export interface Song {
   artist: string;
   name: string;
+  id: string;
 }
 
 @Injectable({
