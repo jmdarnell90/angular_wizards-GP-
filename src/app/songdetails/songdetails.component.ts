@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../shared/api.service';
 
 @Component({
@@ -21,7 +21,6 @@ export class SongDetailsComponent {
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
-    private router: Router
   ) {
     const routeParams = this.route.snapshot.paramMap;
     const id = routeParams.get('id')!;
