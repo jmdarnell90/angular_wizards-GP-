@@ -1,5 +1,9 @@
 <div class="detail-container">
-  <img class="detail-cover" [src]="songDetail.albumCoverUrl" alt="{{ songDetail.title }} Album Cover" />
+  <img
+    class="detail-cover"
+    [src]="songDetail.albumCoverUrl"
+    alt="{{ songDetail.title }} Album Cover"
+  />
   <h2 class="detail-title" (click)="routeToUrl()">{{ songDetail.title }}</h2>
   <p class="detail-artist">Artist: {{ songDetail.artist }}</p>
   <p class="detail-album">Album: {{ songDetail.album }}</p>
